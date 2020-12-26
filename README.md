@@ -7,6 +7,7 @@ In order to generate a randome maze, a following Pseudocode is used.
 Type of map array is setted in Integer.
 Odd number represents wall, and even number represents ground.
 
+<pre>
 <code>
   1 1 1 1 1 1 1 1 1 1 1
   1 x 1 x 1 x 1 x 1 x 1
@@ -20,9 +21,11 @@ Odd number represents wall, and even number represents ground.
   1 x 1 x 1 x 1 x 1 x 1
   1 1 1 1 1 1 1 1 1 1 1
 </code>
+</pre>
 
 X is ground, 1 is wall
 
+<pre>
 <code>
   Pick Random_Cell
   RandomCell->Visited=true;
@@ -38,3 +41,7 @@ X is ground, 1 is wall
     Remove wall from wallList;
 }
 </code>
+</pre>
+
+For more details
+(https://bytes.com/topic/software-development/answers/823704-maze-generation-algorithm-s)
