@@ -7,8 +7,7 @@ In order to generate a randome maze, a following Pseudocode is used.
 Type of map array is setted in Integer.
 Odd number represents wall, and even number represents ground.
 
-<pre>
-<code>
+<code> <pre>
   1 1 1 1 1 1 1 1 1 1 1
   1 x 1 x 1 x 1 x 1 x 1
   1 1 1 1 1 1 1 1 1 1 1
@@ -20,8 +19,7 @@ Odd number represents wall, and even number represents ground.
   1 1 1 1 1 1 1 1 1 1 1
   1 x 1 x 1 x 1 x 1 x 1
   1 1 1 1 1 1 1 1 1 1 1
-</code>
-</pre>
+</pre> </code>
 
 X is ground, 1 is wall
 
