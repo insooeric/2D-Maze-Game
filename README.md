@@ -7,7 +7,8 @@ In order to generate a randome maze, a following Pseudocode is used.
 Type of map array is setted in Integer.
 Odd number represents wall, and even number represents ground.
 
-<code> <pre>
+<pre>
+<code>
   1 1 1 1 1 1 1 1 1 1 1
   1 x 1 x 1 x 1 x 1 x 1
   1 1 1 1 1 1 1 1 1 1 1
@@ -19,7 +20,8 @@ Odd number represents wall, and even number represents ground.
   1 1 1 1 1 1 1 1 1 1 1
   1 x 1 x 1 x 1 x 1 x 1
   1 1 1 1 1 1 1 1 1 1 1
-</pre> </code>
+</code>
+</pre>
 
 X is ground, 1 is wall
 
@@ -43,3 +45,7 @@ X is ground, 1 is wall
 
 For more details
 (https://bytes.com/topic/software-development/answers/823704-maze-generation-algorithm-s)
+
+### Adventages
+Only one solution exists
+Player can approach to every ground. (all the grounds are connected)
