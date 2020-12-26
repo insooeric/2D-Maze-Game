@@ -1,0 +1,201 @@
+/* code saver */
+n = i.next();
+
+					if (motion >= finalMotion) {
+						motion = finalMotion - 9;
+					}
+					if(!(isUpL || isUpR || isDownL || isDownR)) {
+						if (n == KeyEvent.VK_A) {
+							isLeft = true;
+							if(isInitMotion) { motion = 18; }
+						} else { isLeft = false; }
+						
+						if (n == KeyEvent.VK_D) {
+							isRight = true;
+							if(isInitMotion) { motion = 54; }
+						} else { isRight = false; }
+						
+						if (n == KeyEvent.VK_W) {
+							isUp = true;
+							if(isInitMotion) { motion = 36; }
+						} else { isUp = false; }
+						
+						if (n == KeyEvent.VK_S) {
+							isDown = true;
+							if(isInitMotion) { motion = 0; }
+						} else { isDown = false; }
+					}
+
+					
+					if (isUp && isLeft) {
+						isLeft = false;
+						isUp = false;
+						if(isInitMotion) { motion = 27; }
+						isUpL = true;
+					} else { isUpL = false; }
+
+					if (isUp && isRight) {
+						isRight = false;
+						isUp = false;
+						if(isInitMotion) { motion = 45; }
+						isUpR = true;
+					} else { isUpR = false;	}
+
+					if (isDown && isLeft) {
+						isLeft = false;
+						isDown = false;
+						if(isInitMotion) { motion = 9; }
+						isDownL = true;
+					} else { isDownL = false;  }
+
+					if (isDown && isRight) {
+						isRight = false;
+						isDown = false;
+						if(isInitMotion) { motion = 64; }
+						isDownR = true;
+					} else { isDownR = false; }
+
+					movePlayer();
+
+					if (isInitMotion) {
+						finalMotion = motion + 9;
+						System.out.println(finalMotion);
+					}
+
+//					motion++;
+
+
+
+if (isUpL || isUpR || isDownL || isDownR) {
+			if (isUpL) {
+				player.setMotion(motion);
+			}
+
+			if (isUpR) {
+				player.setMotion(motion);
+			}
+
+			if (isDownL) {
+				player.setMotion(motion);
+			}
+
+			if (isDownR) {
+				player.setMotion(motion);
+			}
+		} else {
+			if (isLeft) {
+				player.setMotion(motion);
+				player.movePlayer(-PLAYER_SPEED, 0);
+			}
+
+			if (isRight) {
+				player.setMotion(motion);
+				player.movePlayer(PLAYER_SPEED, 0);
+			}
+
+			if (isUp) {
+				player.setMotion(motion);
+				player.movePlayer(0, -PLAYER_SPEED);
+			}
+
+			if (isDown) {
+				player.setMotion(motion);
+				player.movePlayer(0, PLAYER_SPEED);
+			}
+		}
+		
+		!(isUpL || isUpR || isDownL || isDownR)
+		
+		if(isUp && collision(player.getBotRect(), wallList)) {
+				player.movePlayer(0, DIAGONAL_SPEED);
+			}
+			if(isDown && collision(player.getTopRect(), roofList)) {
+				player.movePlayer(0, -DIAGONAL_SPEED);
+			}
+			if(isLeft && (collision(player.getBotRect(), roofList) || collision(player.getBotRect(), wallList))) {
+				player.movePlayer(DIAGONAL_SPEED, 0);
+			}
+			if(isRight && (collision(player.getBotRect(), roofList) || collision(player.getBotRect(), wallList))) {
+				player.movePlayer(-DIAGONAL_SPEED, 0);
+			}
+		
+	/*
+	 * 0 - 8 down 
+	 * 9 - 17 down-left 
+	 * 18 - 26 left 
+	 * 27 - 35 up-left 
+	 * 36 - 44 up 
+	 * 45 - 53 up-right 
+	 * 54 - 62 right 
+	 * 63 - 71 down-right
+	 */
+	 
+	 
+	 
+	 if (!(isUpL || isUpR || isDownL || isDownR)) {
+			if (isUp) {
+				moveComponents(0, pSpeed);
+				if (collision(pBotRect, wallList)) {
+					moveComponents(0, -pSpeed);
+				}
+				if(player.getYpos() >= CAMERA_Y_MIN) {
+					cameraMode = false;
+				}
+			}
+			if (isDown) {
+				moveComponents(0, -pSpeed);
+				if (collision(pTopRect, roofList)) {
+					moveComponents(0, pSpeed);
+				} 
+				if(player.getYpos() <= CAMERA_Y_MAX) {
+					cameraMode = false;
+				}
+			}
+			if (isLeft) {
+				moveComponents(pSpeed, 0);
+				if (collision(pTopRect, roofList) || collision(pBotRect, wallList)) {
+					moveComponents(-pSpeed, 0);
+				}
+				if(player.getXpos() >= CAMERA_X_MAX) {
+					cameraMode = false;
+				}
+				
+			}
+			if (isRight) {
+				moveComponents(-pSpeed, 0);
+				if (collision(pTopRect, roofList) || collision(pBotRect, wallList)) {
+					moveComponents(pSpeed, 0);
+				}
+				if(player.getXpos() <= CAMERA_X_MIN) {
+					cameraMode = false;
+				}
+			}
+		} else {
+			System.out.println("diag");
+			if(isUpL) {
+				if(player.getYpos() <= CAMERA_Y_MAX) {
+					moveComponents(0, pSpeed);
+				} else {
+					player.movePlayer(0, -pSpeed);
+				}
+				if(player.getXpos() <= CAMERA_X_MIN) {
+					System.out.println();
+					moveComponents(pSpeed, 0);
+				} else {
+					player.movePlayer(-pSpeed, 0);
+				}
+			}
+			if(isUpR) {
+				if(player.getYpos() <= CAMERA_Y_MAX) {
+					moveComponents(0, pSpeed);
+				} else {
+					player.movePlayer(0, -pSpeed);
+				}
+				if(player.getXpos() >= CAMERA_X_MAX) {
+					System.out.println();
+					moveComponents(-pSpeed, 0);
+				} else {
+					player.movePlayer(pSpeed, 0);
+				}
+			}
+		}
