@@ -1,8 +1,15 @@
 # 2D-Maze-Game
-This game is programmed in Java.<br />
-The primary goal of this project is to generate a random maze using an algorithm and escape from it.
+2D Maze game. The player moves around the maze to escape from the randomly generated maze. Clearing time will be recorded and displayed once the game is cleared.
 
-## Algorithm
+This MazeGame was developed in Eclipse, with Java.
+
+# Description
+## Input
+The input of this game is simple and easy.
+
+Player Movement: W/A/S/D
+
+If you 
 In order to generate a randome maze, a following Pseudocode is used.
 Type of map array is setted in Integer.
 Odd number represents wall, and even number represents ground.
