@@ -9,6 +9,8 @@ The input of this game is simple and easy.
 
 Player Movement: W/A/S/D
 
+
+
 If you 
 In order to generate a randome maze, a following Pseudocode is used.
 Type of map array is setted in Integer.
