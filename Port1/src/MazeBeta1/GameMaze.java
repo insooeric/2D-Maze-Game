@@ -119,6 +119,7 @@ public class GameMaze implements Variable{
 		}
 		m[0][1] = 0;
 		m[MAPSIZE - 1][MAPSIZE - 2] = 0;
+		System.out.println("Solution");
 		for (int i = 0; i < MAPSIZE; i++) {
 			for (int j = 0; j < MAPSIZE; j++) {
 				switch(m[i][j]) {
@@ -126,7 +127,7 @@ public class GameMaze implements Variable{
 					System.out.print("  ");
 					break;
 				case 1:
-					System.out.print("¢Æ¢Æ");
+					System.out.print("¢Æ");
 					break;
 				}
 			}
@@ -137,6 +138,10 @@ public class GameMaze implements Variable{
 }
 
 class Block extends Rectangle{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int x;
 	int y;
 	boolean visited;

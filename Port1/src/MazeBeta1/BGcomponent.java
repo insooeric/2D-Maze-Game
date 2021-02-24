@@ -2,24 +2,24 @@ package MazeBeta1;
 
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.regex.Matcher;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 
 public class BGcomponent extends Rectangle{
 
-	private String path;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private URL path;
 	private String wallFile = "wallSprite.png";
 	private String groundFile = "Ground.png";
 	private BufferedImage img;
 	private BufferedImage subImg;
 	
 	BGcomponent(int id){
-		this.path = setLocation();
-		
 		switch(id) {
 		case 1:
 			loadImage(wallFile);
@@ -44,17 +44,10 @@ public class BGcomponent extends Rectangle{
 		this.y += y;
 	}
 	
-	String setLocation() {
-		String path = this.getClass().getResource("").getPath();
-		path = path.replaceAll("%20", " ");
-		path = path.replaceFirst(("/bin/" + this.getClass().getPackageName()), "/src/" + this.getClass().getPackageName());
-		path = path.substring(1);
-		return path;
-	}
-	
 	void loadImage(String fileName) {
+		this.path = this.getClass().getResource("/resources/" + fileName);
 		try {
-			img = ImageIO.read(new File(path + fileName));
+			img = ImageIO.read(path);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

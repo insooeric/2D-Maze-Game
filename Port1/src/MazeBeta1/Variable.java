@@ -1,7 +1,5 @@
 package MazeBeta1;
 
-import java.util.ArrayList;
-
 public interface Variable {
 	final int SCRW = 1400;
 	final int SCRH = 800;
@@ -29,7 +27,7 @@ public interface Variable {
 	final int SECOND = 1000;
 	final int DIAMETER = 120;
 	
-	static final int N = 10; // Number of rooms in a row
+	static final int N = 10; // Number of rooms in a row, must be even number
 	static final int MAPSIZE = N * 2 + 1; // Don't change
 	static int[][] m = new int[MAPSIZE][MAPSIZE];
 }

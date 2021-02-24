@@ -4,9 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.awt.image.RescaleOp;
-import java.awt.image.WritableRaster;
-import java.util.ArrayList;
 
 public class Destination implements Variable {
 	private BufferedImage originImg;
@@ -49,13 +46,12 @@ public class Destination implements Variable {
 	}
 
 	void translateImg(BufferedImage img) {
-		int a, r, g, b;
+		int r, g, b;
 		int w = RGB_MAX;
 		int color;
 		for (int i = 0; i < img.getHeight(); i++) {
 			for (int j = 0; j < img.getWidth(); j++) {
 				color = pixelArray[i][j];
-				a = ((0xff000000 & color) >>> 24);
 				r = ((0x00ff0000 & color) >> 16);
 				g = ((0x0000ff00 & color) >> 8);
 				b = ((0x000000ff & color));

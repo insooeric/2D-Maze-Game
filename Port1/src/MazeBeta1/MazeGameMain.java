@@ -16,13 +16,18 @@ import javax.swing.Timer;
 
 
 
-public class GameMain extends JFrame implements Variable, KeyListener {
+public class MazeGameMain extends JFrame implements Variable, KeyListener {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				new GameMain();
+				new MazeGameMain();
 			}
 		});
 	}
@@ -61,7 +66,7 @@ public class GameMain extends JFrame implements Variable, KeyListener {
 	int motion, finalMotion, pSpeed;
 	long beforeTime, afterTime, secDiffTime;
 
-	GameMain() {
+	MazeGameMain() {
 		setGUI();
 		setMaze();
 		setPlayer();
@@ -466,6 +471,11 @@ public class GameMain extends JFrame implements Variable, KeyListener {
 	}
 
 	private class DrawingPanel extends JPanel {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		DrawingPanel() {
 			shader = new ScreenShader(player.x + (player.width/2 - DIAMETER), player.y + (player.height/2 - DIAMETER), DIAMETER);

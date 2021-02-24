@@ -6,30 +6,32 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class GameOver extends JPanel implements Variable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Rectangle gameOverRect = new Rectangle(0, 0, SCRW, SCRH);
 	private Color color;
-	private String clearFile = "gameclear.png";
-	private String path;
+	private String clearFile = "gameclear.PNG";
+	private URL path;
 	
 	private Font font = new Font("Monospaced", Font.BOLD, 30);
 	private BufferedImage clearImg;
 	
-	private long time;
 	private int sec = 0, min = 0, hour = 0;
 	private int alpha = 0;
 	boolean popUp = false;
 	
 	GameOver() {
-		path = setLocation();
-		clearImg = loadImage(clearFile);
+		loadImage(clearFile);
 	}
 	
 	void getClearTime(long time) {
@@ -39,22 +41,16 @@ public class GameOver extends JPanel implements Variable{
 		System.out.println(time/960);
 	}
 	
-	String setLocation() {
-		String path = this.getClass().getResource("").getPath();
-		path = path.replaceAll("%20", " ");
-		path = path.replaceFirst(("/bin/" + this.getClass().getPackageName()), "/src/" + this.getClass().getPackageName());
-		path = path.substring(1);
-		return path;
-	}
-	
-	BufferedImage loadImage(String fileName) {
-		BufferedImage img = null;
+	void loadImage(String fileName) {
+		System.out.println(path.toString());
 		try {
-			img = ImageIO.read(new File(path + fileName));
+			clearImg = ImageIO.read(path);
 		} catch (IOException e) {
+			if(path == null) {
+				System.out.println("Image Missing");
+			}
 			e.printStackTrace();
 		}
-		return img;
 	}
 	
 	void graphicPanel(Graphics g, JPanel panel) {

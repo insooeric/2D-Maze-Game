@@ -4,15 +4,19 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
 public class PlayerSprite extends Rectangle implements Variable{
 	
-	private String path;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private URL path;
 	private String playerFile = "charecter.png";
 	private BufferedImage img;
 	private BufferedImage subImg;
@@ -24,7 +28,6 @@ public class PlayerSprite extends Rectangle implements Variable{
 	private ArrayList<BufferedImage> playerImg = new ArrayList<BufferedImage>();
 	
 	PlayerSprite(int x, int y){
-		this.path = setLocation();
 		this.x = x;
 		this.y = y;
 		this.width = PLAYERW;
@@ -60,22 +63,16 @@ public class PlayerSprite extends Rectangle implements Variable{
 		this.bOutRect.height = 10;
 	}
 	
-	String setLocation() {
-		String path = this.getClass().getResource("").getPath();
-		path = path.replaceAll("%20", " ");
-		path = path.replaceFirst(("/bin/" + this.getClass().getPackageName()), "/src/" + this.getClass().getPackageName());
-		path = path.substring(1);
-		return path;
-	}
-	
 	BufferedImage cropImage(BufferedImage src, int xcord, int ycord) {
 		BufferedImage subImage = src.getSubimage(xcord, ycord, PLAYERW_CROP, PLAYERH_CROP);
 		return subImage;
 	}
 	
 	void loadImage(String fileName) {
+		this.path = this.getClass().getResource("/resources/" + fileName);
+		System.out.println(path.toString());
 		try {
-			img = ImageIO.read(new File(path + fileName));
+			img = ImageIO.read(path);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
