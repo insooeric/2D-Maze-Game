@@ -127,7 +127,7 @@ public class GameMaze implements Variable{
 					System.out.print("  ");
 					break;
 				case 1:
-					System.out.print("¢Æ");
+					System.out.print(" â–©");
 					break;
 				}
 			}

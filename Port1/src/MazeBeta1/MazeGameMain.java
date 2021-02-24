@@ -1,3 +1,10 @@
+/*
+* Programmer: Insoo Son
+* Complete date: 26 Dec 2020
+*/
+
+
+
 package MazeBeta1;
 
 import java.awt.Color;
@@ -22,7 +29,6 @@ public class MazeGameMain extends JFrame implements Variable, KeyListener {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			@Override
@@ -473,7 +479,11 @@ public class MazeGameMain extends JFrame implements Variable, KeyListener {
 	private class DrawingPanel extends JPanel {
 
 		/**
+<<<<<<< HEAD:Port1/src/MazeBeta1/MazeGameMain.java
 		 * 
+=======
+		 *
+>>>>>>> a2dfafd67465d94867cb189aa9c968a8775a695e:Port1/src/MazeBeta1/GameMain.java
 		 */
 		private static final long serialVersionUID = 1L;
 

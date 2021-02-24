@@ -26,10 +26,6 @@ public class Destination implements Variable {
 	void imgToPixel(BufferedImage img) {
 		for (int i = 0; i < img.getHeight(); i++) {
 			for (int j = 0; j < img.getWidth(); j++) {
-				/*
-				 * a = (0xff000000 & color) >>> 24; r = (0x00ff0000 & color) >> 16; g =
-				 * (0x0000ff00 & color) >> 8; b = (0x000000ff & color);
-				 */
 				pixelArray[i][j] = img.getRGB(j, i);
 			}
 		}

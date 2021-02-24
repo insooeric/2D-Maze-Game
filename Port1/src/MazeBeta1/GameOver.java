@@ -42,6 +42,7 @@ public class GameOver extends JPanel implements Variable{
 	}
 	
 	void loadImage(String fileName) {
+		this.path = this.getClass().getResource("/resources/" + fileName);
 		System.out.println(path.toString());
 		try {
 			clearImg = ImageIO.read(path);
