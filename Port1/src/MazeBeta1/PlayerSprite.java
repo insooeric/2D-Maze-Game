@@ -12,6 +12,10 @@ import javax.imageio.ImageIO;
 
 public class PlayerSprite extends Rectangle implements Variable{
 	
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private String path;
 	private String playerFile = "charecter.png";
 	private BufferedImage img;
@@ -61,10 +65,9 @@ public class PlayerSprite extends Rectangle implements Variable{
 	}
 	
 	String setLocation() {
-		String path = this.getClass().getResource("").getPath();
-		path = path.replaceAll("%20", " ");
-		path = path.replaceFirst(("/bin/" + this.getClass().getPackageName()), "/src/" + this.getClass().getPackageName());
-		path = path.substring(1);
+		//fixed
+		String path = new File("").getAbsolutePath();
+		path += "\\src\\";
 		return path;
 	}
 	

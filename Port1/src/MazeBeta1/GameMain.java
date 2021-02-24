@@ -1,3 +1,10 @@
+/*
+* Programmer: Insoo Son
+* Complete date: 26 Dec 2020
+*/
+
+
+
 package MazeBeta1;
 
 import java.awt.Color;
@@ -17,6 +24,11 @@ import javax.swing.Timer;
 
 
 public class GameMain extends JFrame implements Variable, KeyListener {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
@@ -466,6 +478,11 @@ public class GameMain extends JFrame implements Variable, KeyListener {
 	}
 
 	private class DrawingPanel extends JPanel {
+
+		/**
+		 *
+		 */
+		private static final long serialVersionUID = 1L;
 
 		DrawingPanel() {
 			shader = new ScreenShader(player.x + (player.width/2 - DIAMETER), player.y + (player.height/2 - DIAMETER), DIAMETER);

@@ -1,7 +1,5 @@
 package MazeBeta1;
 
-import java.util.ArrayList;
-
 public interface Variable {
 	final int SCRW = 1400;
 	final int SCRH = 800;
