@@ -45,12 +45,14 @@ public class GameOver extends JPanel implements Variable{
 	String setLocation() {
 		//fixed
 		String path = new File("").getAbsolutePath();
-		path += "\\src\\";
+		path += "\\Port1\\src\\MazeBeta1\\";
+		System.out.println(path);
 		return path;
 	}
 	
 	BufferedImage loadImage(String fileName) {
 		BufferedImage img = null;
+		System.out.println(path + fileName);
 		try {
 			img = ImageIO.read(new File(path + fileName));
 		} catch (IOException e) {

@@ -123,7 +123,7 @@ public class GameMaze implements Variable{
 			for (int j = 0; j < MAPSIZE; j++) {
 				switch(m[i][j]) {
 				case 0:
-					System.out.print("   ");
+					System.out.print("  ");
 					break;
 				case 1:
 					System.out.print(" ▩");

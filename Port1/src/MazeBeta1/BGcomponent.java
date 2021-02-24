@@ -49,7 +49,7 @@ public class BGcomponent extends Rectangle{
 	String setLocation() {
 		//Fixed
 		String path = new File("").getAbsolutePath();
-		path += "\\src\\";
+		path += "\\Port1\\src\\MazeBeta1\\";
 		return path;
 	}
 	

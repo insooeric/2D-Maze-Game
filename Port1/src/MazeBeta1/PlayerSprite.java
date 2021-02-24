@@ -67,7 +67,7 @@ public class PlayerSprite extends Rectangle implements Variable{
 	String setLocation() {
 		//fixed
 		String path = new File("").getAbsolutePath();
-		path += "\\src\\";
+		path += "\\Port1\\src\\MazeBeta1\\";
 		return path;
 	}
 	
