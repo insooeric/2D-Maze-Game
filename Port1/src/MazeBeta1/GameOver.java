@@ -14,6 +14,10 @@ import javax.swing.*;
 
 public class GameOver extends JPanel implements Variable{
 	
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private Rectangle gameOverRect = new Rectangle(0, 0, SCRW, SCRH);
 	private Color color;
 	private String clearFile = "gameclear.png";
@@ -22,7 +26,6 @@ public class GameOver extends JPanel implements Variable{
 	private Font font = new Font("Monospaced", Font.BOLD, 30);
 	private BufferedImage clearImg;
 	
-	private long time;
 	private int sec = 0, min = 0, hour = 0;
 	private int alpha = 0;
 	boolean popUp = false;
@@ -40,10 +43,9 @@ public class GameOver extends JPanel implements Variable{
 	}
 	
 	String setLocation() {
-		String path = this.getClass().getResource("").getPath();
-		path = path.replaceAll("%20", " ");
-		path = path.replaceFirst(("/bin/" + this.getClass().getPackageName()), "/src/" + this.getClass().getPackageName());
-		path = path.substring(1);
+		//fixed
+		String path = new File("").getAbsolutePath();
+		path += "\\src\\";
 		return path;
 	}
 	

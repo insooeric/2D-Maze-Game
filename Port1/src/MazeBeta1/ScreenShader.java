@@ -13,8 +13,6 @@ public class ScreenShader implements Variable{
 	private Area circle;
 	private Area shadeRect;
 	private AffineTransform trans = new AffineTransform();
-	private int circum;
-	
 	ArrayList<Rectangle> shadList = new ArrayList<Rectangle>();
 	
 	ScreenShader(int x, int y, int r){

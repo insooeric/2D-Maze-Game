@@ -123,10 +123,10 @@ public class GameMaze implements Variable{
 			for (int j = 0; j < MAPSIZE; j++) {
 				switch(m[i][j]) {
 				case 0:
-					System.out.print("  ");
+					System.out.print("   ");
 					break;
 				case 1:
-					System.out.print("¢Æ¢Æ");
+					System.out.print(" â–©");
 					break;
 				}
 			}
@@ -137,6 +137,10 @@ public class GameMaze implements Variable{
 }
 
 class Block extends Rectangle{
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	int x;
 	int y;
 	boolean visited;

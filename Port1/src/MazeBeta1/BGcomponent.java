@@ -4,13 +4,15 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.regex.Matcher;
 
 import javax.imageio.ImageIO;
 
 public class BGcomponent extends Rectangle{
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private String path;
 	private String wallFile = "wallSprite.png";
 	private String groundFile = "Ground.png";
@@ -45,10 +47,9 @@ public class BGcomponent extends Rectangle{
 	}
 	
 	String setLocation() {
-		String path = this.getClass().getResource("").getPath();
-		path = path.replaceAll("%20", " ");
-		path = path.replaceFirst(("/bin/" + this.getClass().getPackageName()), "/src/" + this.getClass().getPackageName());
-		path = path.substring(1);
+		//Fixed
+		String path = new File("").getAbsolutePath();
+		path += "\\src\\";
 		return path;
 	}
 	
