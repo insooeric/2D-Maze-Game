@@ -20,7 +20,7 @@ public class GameOver extends JPanel implements Variable{
 	private static final long serialVersionUID = 1L;
 	private Rectangle gameOverRect = new Rectangle(0, 0, SCRW, SCRH);
 	private Color color;
-	private String clearFile = "gameclear.PNG";
+	private String clearFile = "gameclear.png";
 	private URL path;
 	
 	private Font font = new Font("Monospaced", Font.BOLD, 30);
