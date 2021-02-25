@@ -11,9 +11,9 @@ Player Movement: W/A/S/D
 # Installation
 To install this MazeGame:
 ## Windows
-    1. Download "MazeGame.java" below.
-    2. Open the Commend shell then go to the file where the "MazeGame.java" is.
-    3. Type <code> java -jar MazeGame.java </code> then hit enter.
+   1. Download "MazeGame.java" below.
+   2. Open the Commend shell then go to the file where the "MazeGame.java" is.
+   3. Type <code> java -jar MazeGame.java </code> then hit enter.
 
 # Maze generate algorithm source
 (https://bytes.com/topic/software-development/answers/823704-maze-generation-algorithm-s)
