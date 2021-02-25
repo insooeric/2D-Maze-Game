@@ -14,6 +14,7 @@ To install this MazeGame:
    1. Download "MazeGame.java" below.
    2. Open the Commend shell then go to the file where the "MazeGame.java" is.
    3. Type <code> java -jar MazeGame.java </code> then hit enter.
+ 
 ![자바추출](https://user-images.githubusercontent.com/27346965/109091993-cb931580-76e3-11eb-8ebf-b9471228eebb.PNG)
 # Maze generate algorithm source
 (https://bytes.com/topic/software-development/answers/823704-maze-generation-algorithm-s)
