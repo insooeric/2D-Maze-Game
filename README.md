@@ -11,5 +11,6 @@ Player Movement: W/A/S/D
 
 # Installation
 Download and run a runnable file under "Exports/MazeGame.jar"
- 
+
+# In game picture
 <img width="1042" alt="ingame_screen" src="https://github.com/insooeric/2D-Maze-Game/assets/27346965/6c4d834e-5b86-4da7-a571-cc04f7a33f4f">
